@@ -12,13 +12,14 @@ section .data
 menu: db "Encryption menu options:", 10, "s - show current messages", 10, "r - read new message", 10, "e - transform", 10, "p - print stats", 10, "q - quit program", 10, "enter option letter -> ", 0
 original: db "This is the original message.", 0
 stringfmt: db "%s", 0 
-charfmt: db "%c", 0
 badInput: db "Invalid option! Try again!", 10, 0
+goodInput: db "Valid Option", 10, 0
+check: db "check", 10, 0
 
 section .bss
 
 arr resq 10
-input resb 1
+input resb 2
 
 section .text
 
@@ -33,44 +34,44 @@ init:
     cmp r8, 80
     jl init
 
-getInput:
     xor rdi, rdi
     xor rsi, rsi
 
+getInput:
     
     mov rdi, stringfmt
     mov rsi, menu
     xor rax, rax
     call printf
-
+    
     push rbp
-    mov rdi, charfmt
+    mov rdi, stringfmt
     mov rsi, input
     mov rax, 0
     call scanf
     pop rbp
 
     xor r9, r9
-    mov r9, [input]
-    cmp r9, 's'
+    mov r9b, [input]
+    cmp r9b, 's'
     je end
-    cmp r9, 'S'
+    cmp r9b, 'S'
     je end
-    cmp r9, 'r'
+    cmp r9b, 'r'
     je end
-    cmp r9, 'R'
+    cmp r9b, 'R'
     je end
-    cmp r9, 'e'
+    cmp r9b, 'e'
     je end
-    cmp r9, 'E'
+    cmp r9b, 'E'
     je end
-    cmp r9, 'p'
+    cmp r9b, 'p'
     je end
-    cmp r9, 'P'
+    cmp r9b, 'P'
     je end
-    cmp r9, 'q'
+    cmp r9b, 'q'
     je end
-    cmp r9, 'Q'
+    cmp r9b, 'Q'
     je end
 
     mov rdi, badInput
@@ -80,5 +81,6 @@ getInput:
     jmp getInput
 
 end:
+
     mov rax, 0
     ret
