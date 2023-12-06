@@ -4,8 +4,8 @@ extern display
 extern weave
 extern printStats
 extern free
-extern  printf          
-extern  scanf
+extern printf          
+extern scanf
 
 section .data
 
