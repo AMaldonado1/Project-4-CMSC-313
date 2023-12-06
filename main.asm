@@ -13,7 +13,6 @@ menu: db "Encryption menu options:", 10, "s - show current messages", 10, "r - r
 original: db "This is the original message.", 0
 stringfmt: db "%s", 0 
 badInput: db "Invalid option! Try again!", 10, 0
-goodInput: db "Valid Option", 10, 0
 check: db "check", 10, 0
 
 section .bss
