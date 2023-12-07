@@ -9,16 +9,16 @@ extern scanf
 
 section .data
 
-menu: db "Encryption menu options:", 10, "s - show current messages", 10, "r - read new message", 10, "e - transform", 10, "p - print stats", 10, "q - quit program", 10, "enter option letter -> ", 0
-original: db "This is the original message.", 0
-stringfmt: db "%s", 0 
-badInput: db "Invalid option! Try again!", 10, 0
-check: db "check", 10, 0
+menu:       db "Encryption menu options:", 10, "s - show current messages", 10, "r - read new message", 10, "e - transform", 10, "p - print stats", 10, "q - quit program", 10, "enter option letter -> ", 0
+original:   db "This is the original message.", 0
+stringfmt:  db "%s", 0 
+badInput:   db "Invalid option! Try again!", 10, 0
+check:      db "check", 10, 0
 
 section .bss
 
-arr resq 10
-input resb 2
+arr         resq 10
+input       resb 2
 
 section .text
 
