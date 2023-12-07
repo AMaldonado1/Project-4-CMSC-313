@@ -60,9 +60,11 @@ getInput:
     je show
 
     cmp r9b, 'r'
-    je end
+    je read
+
     cmp r9b, 'R'
-    je end
+    je read
+    
     cmp r9b, 'e'
     je end
     cmp r9b, 'E'
@@ -85,6 +87,12 @@ getInput:
 show:
     mov rdi, arr
     call display
+    jmp getInput
+
+read:
+    push rbp
+    mov rdi, arr
+    call read
     jmp getInput
 
 end:
