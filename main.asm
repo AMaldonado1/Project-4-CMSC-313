@@ -4,8 +4,8 @@ extern display
 extern weave
 extern printStats
 extern free
-extern printf          
-extern scanf
+extern  printf          
+extern  scanf
 
 section .data
 
@@ -52,10 +52,13 @@ getInput:
 
     xor r9, r9
     mov r9b, [input]
+
     cmp r9b, 's'
-    je end
+    je show
+
     cmp r9b, 'S'
-    je end
+    je show
+
     cmp r9b, 'r'
     je end
     cmp r9b, 'R'
@@ -77,6 +80,11 @@ getInput:
     mov rsi, stringfmt
     xor rax, rax
     call printf
+    jmp getInput
+
+show:
+    mov rdi, arr
+    call display
     jmp getInput
 
 end:
