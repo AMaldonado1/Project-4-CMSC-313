@@ -1,4 +1,4 @@
-; Adrian Maldonado - FP93537 - amaldon1 - CMSC 313 FA23 - PROJECT 3
+; Adrian Maldonado - Jeremy Bruce - CMSC 313 FA23 - PROJECT 3
 ; Description:
 ; Asks the user for a string that is longer than 8. Then ask for a number between 2 and the length of the string.
 ; There will be error/input correction.  This number will be where the string will be split. Then display the original string
