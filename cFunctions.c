@@ -71,8 +71,8 @@ void printStats(char *arr[])
         if (index < 0 || index > 9)
             printf("Invalid String Location. \n");
     }
-    char newLine = fgetc(stdin);
 
+    char newLine = fgetc(stdin);
     int i = 0;
     char listPunc[] = {'!', '?', '.', ',', '"', ':', ';', '-', '_', ')', '(', '{', '}', '[', ']'};
     int letters = 0;
@@ -80,21 +80,20 @@ void printStats(char *arr[])
     int specials = 0;
     int punct = 0;
     int flag = 0;
-
     char *string = arr[index];
     while (string[i] != '\0')
     {
         int asciiVal = (int)string[i];
-        for (int j = 0; j = 15; j++)
+        for (int j = 0; j < 15; j++)
         {
             if (string[i] == listPunc[j])
                 flag = 1;
         }
-        if ((asciiVal >= 65 || asciiVal <= 90) || (asciiVal >= 97 || asciiVal <= 122))
+        if ((asciiVal >= 65 && asciiVal <= 90) || (asciiVal >= 97 && asciiVal <= 122))
         {
             letters += 1;
         }
-        else if (asciiVal >= 48 || asciiVal <= 57)
+        else if (asciiVal >= 48 && asciiVal <= 57)
         {
             digits += 1;
         }
@@ -115,3 +114,4 @@ void printStats(char *arr[])
     printf("There are %d special characters.\n", specials);
     printf("There are %d punctuation characters.\n", punct);
 }
+
