@@ -69,10 +69,13 @@ getInput:
     je end
     cmp r9b, 'E'
     je end
+    
     cmp r9b, 'p'
-    je end
+    je stats
+
     cmp r9b, 'P'
-    je end
+    je stats
+
     cmp r9b, 'q'
     je end
     cmp r9b, 'Q'
@@ -93,6 +96,13 @@ readInput:
     push rbp
     mov rdi, arr
     call read
+    pop rbp
+    jmp getInput
+
+stats:
+    push rbp
+    mov rdi, arr
+    call printStats
     pop rbp
     jmp getInput
 
