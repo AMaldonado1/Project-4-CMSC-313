@@ -69,7 +69,7 @@ getInput:
     je end
     cmp r9b, 'E'
     je end
-    
+
     cmp r9b, 'p'
     je stats
 
@@ -110,3 +110,7 @@ end:
 
     mov rax, 0
     ret
+
+;nasm -felf64 main.asm
+;gcc -c cFunctions.c
+;gcc -m64 -o main cFunctions.o main.o
